@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&family=Work+Sans&display=swap");
+
+body {
+  margin: 0;
+  padding: 20px;
+  height: 50vw;
+  font-size: 18px;
+  background: url("./img/pexels-garrett-morrow-2885014.jpg") ;
+  background-size: cover;
+  background-position: center;
+  font: 800 1.2rem "Work Sans", sans-serif;
+}
+
+h1{
+  margin-top: 120px;
+}
+
+img:hover {
+  border: 8px rgba(183, 11, 11, 0.84) solid;
+}

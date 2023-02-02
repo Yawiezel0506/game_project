@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&family=Work+Sans&display=swap");
+      body {
+        background-image: url(pay-gc44125304_1920.jpg);
+        background-size: cover;
+        background-position: center;
+      }
+
+      img:hover {
+        border: 8px rgba(183, 11, 11, 0.84) solid;
+      }
+
+      #logo {
+        border: 4px solid rgba(150, 64, 127, 0.8);
+        border-radius: 90px;
+        background: rgba(150, 64, 127, 0.527);
+      }
+
+      #div_id {
+        margin: 4vw auto;
+        padding: 16px;
+        width: 400px;
+        background-color: rgba(255, 255, 255, 0.815);
+        border: 6px solid;
+        border-radius: 90px;
+        border-color: bisque;
+      }
+
+      #div_id:hover {
+        background-color: rgba(212, 150, 150, 0.555);
+        border-color: rgba(136, 52, 136, 0.274);
+      }
+
+      h1 {
+        background-color: yellowgreen;
+      }
+
+      * {
+        align-items: center;
+        text-align: center;
+        font: 900 1.2rem "Work Sans", sans-serif;
+        color: rgb(67, 33, 99);
+        border-radius: 20px;
+      }
+
+      #input_id {
+        height: 30px;
+        width: 60px;
+        text-align: center;
+        align-items: center;
+        border-radius: 20px;
+      }
+
+      #hidden_card_id {
+        width: 60px;
+        text-align: center;
+        padding: 7px 0px;
+        border: solid 1px;
+        border-color: rgba(130, 167, 235, 0.815);
+        margin: auto;
+        background-color: rgb(105, 71, 226);
+        color: white;
+      }
+
+      #id_button {
+        border-radius: 20px;
+      }
+
+      #id_button:hover {
+        background: green;
+      }
+    </style>
+  </head>
+
+  <body>
+    <a href="../land/land.html">
+      <img
+        src="./home.png"
+        id="home"
+        alt="home"
+        style="
+          width: 100px;
+          height: 100px;
+          border-radius: 50px;
+          display: block;
+          margin: 50px auto;
+        "
+      />
+    </a>
+    <!-- <h1>Guess The Number</h1> -->
+    <img id="logo" src="logo3.png" alt="logo" height="100px" />
+    <div id="div_id">
+      <h2 id="h2_1_id">We have chosen a number between 1 and 100</h2>
+      <div id="hidden_card_id">?</div>
+      <h2 id="h2_3_id">You have 8 attempts</h2>
+      <input type="number" id="input_id" /><br /><br />
+      <h2 id="h2_2_id">Can you find it quickly?</h2>
+      <button id="id_button" onclick="checkNum()">Check</button>
+    </div>
+    <a href="./guess.html">
+      <img src="./refresh.png" id="home" alt="home" style="width: 80px; height: 80px; border-radius: 30px ; padding: 12px; margin-left: 12px; background: rgba(125, 43, 125, 0.648); ">
+  </a>
+    
+    <script>
+      let computerChos = Math.floor(Math.random() * 99) + 1;
+      let counter = 8;
+
+      let theGameIsFinished = false;
+
+      // מגדיר כמשתנה את הכותרת המתחלפת
+      let h2_2_id = document.getElementById("h2_2_id");
+
+      document.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+          checkNum();
+        }
+      });
+
+      function checkNum() {
+        // שומר את הערך שהוכנס
+        let playerChois = document.getElementById("input_id").value;
+
+        // בודק שהמשחק לא נגמר כבר
+        if (theGameIsFinished == true) {
+          return (document.getElementById("div_id").innerHTML =
+            "<h2>Refresh the page to start over</h2>");
+        }
+
+        // בודק שלא נשלח ערך ריק
+        if (playerChois == "") {
+          // document.getElementById("h2_2_id").innerHTML
+          h2_2_id.innerHTML = "Pleas enter a number";
+          h2_2_id.style.color = "black";
+          h2_2_id.style.backgroundColor = "red";
+          return;
+        }
+
+        if (computerChos > playerChois) {
+          h2_2_id.innerHTML = "Your number is too low";
+          h2_2_id.style.color = "green";
+          h2_2_id.style.backgroundColor = "white";
+          document.getElementById("input_id").value = "";
+          counter--;
+          document.getElementById(
+            "h2_3_id"
+          ).innerHTML = `You have ${counter} more attempts`;
+        } else if (computerChos < playerChois) {
+          h2_2_id.innerHTML = "Your number is too high";
+          h2_2_id.style.color = "red";
+          h2_2_id.style.backgroundColor = "white";
+          document.getElementById("input_id").value = "";
+          counter--;
+          document.getElementById(
+            "h2_3_id"
+          ).innerHTML = `You have ${counter} more attempts`;
+        } else if (computerChos == playerChois) {
+          theGameIsFinished = true;
+          counter--;
+          document.getElementById(
+            "hidden_card_id"
+          ).innerHTML = `${computerChos}`;
+          document.getElementById("hidden_card_id").style.backgroundColor =
+            "mediumspringgreen";
+          h2_2_id.style.color = "black";
+          document.getElementById("h2_3_id").innerHTML = `You got it in ${
+            8 - counter
+          } attempts!`;
+          h2_2_id.style.color = "blue";
+          return (h2_2_id.innerHTML = `Well done!`);
+        }
+        if (counter < 1) {
+          document.getElementById(
+            "div_id"
+          ).innerHTML = `<h2>The game is over</h2><h3>The number was ${computerChos}</h3><h3>Refresh the page to start over</h3>`;
+        }
+      }
+
+      console.log(computerChos);
+    </script>
+  </body>
+</html>

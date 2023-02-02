@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: ariel;
+  text-align: center;
+  background: rgba(123, 137, 44, 0.215);
+  font-family: "Comfortaa", cursive;
+}
+
+img:hover {
+  border: 8px rgba(183, 11, 11, 0.84) solid;
+}
+
+hr {
+  width: 100px;
+}
+
+#errors {
+  color: coral;
+}
+
+#board {
+  width: 450px;
+  height: 450px;
+
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tile {
+  width: 50px;
+  height: 50px;
+  border: 1px solid rgba(163, 42, 42, 0.295);
+  background: rgba(221, 160, 221, 0.322);
+  user-select: none;
+
+  /* text */
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#digits {
+  width: 450px;
+  height: 50px;
+
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.numbers {
+  width: 46px;
+  height: 44px;
+  margin: 2px;
+  border: 1px solid black;
+
+  /* text */
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.numberSelected {
+  background-color: grey;
+}
+
+.tile-start {
+  background: whitesmoke;
+}
+
+.bottom-line {
+  border-bottom: 1px solid black;
+}
+
+.right-line {
+  border-right: 1px solid black;
+}
+
+.buttons {
+  margin-top: 20px;
+  display: block;
+}
+
+button {
+  min-width: 10%;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  font-size: 1rem;
+  font-family: "Comfortaa", cursive;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  cursor: pointer;
+  background: rgba(129, 25, 42, 0.169);
+  margin: 0.5rem;
+}
+
+button:hover {
+  background: rgba(129, 25, 42, 0.55);
+}

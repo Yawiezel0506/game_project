@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" href="icon.webp" type="image/icon type">
+    <title>Y & S Games Project</title>
+
+    <script src="main.js"></script>
+    <!-- <script src="local.js"></script> -->
+</head>
+<body>
+  
+    <div class="container">
+        <form  class="form " id="login">
+          <h1 class="form_title">Login</h1>  
+          <div class="form_message form_message-error"></div>
+          <div class="form_input-group">
+            <input type="text" id="user_in" class="form_input" autofocus placeholder="Email Address" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+            <div class="form_input-error-message"></div>
+          </div>
+          <div class="form_input-group">
+            <input type="password" id="pass_in" class="form_input" autofocus placeholder="password" required >
+            <div class="form_input-error-message"></div>
+          </div>
+          <button class="form_button" id="signInButton" type="submit">Continue</button>
+          <p class="form_text">
+            <a href="#" class="form_link">Forgat your password?</a>
+          </p>
+          <p class="form_text">
+            <a class="form_link" href="./" id="linkCreateAccount">Don't have an account? Create account</a>
+          </p>
+        </form>
+        <form  class="form form-hidden" id="createAccount">
+          <h1 class="form_title">Create account</h1>  
+          <div class="form_message form_message-error2"></div>
+          <div class="form_input-group">
+            <input type="text" id="id_name_up" class="form_input" autofocus placeholder="Username" required minlength="3" maxlength="50">
+            <div class="form_input-error-message"></div>
+          </div>
+          <div class="form_input-group">
+            <input type="text" id="id_email_up" class="form_input" autofocus placeholder="Email Address" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+            <div class="form_input-error-message"></div>
+          </div>
+          <div class="form_input-group">
+            <input type="password" id="id_password_up" class="form_input" autofocus placeholder="password" required minlength="8" >
+            <div class="form_input-error-message"></div>
+          </div>
+          <div class="form_input-group">
+            <input type="password" id="id_confirm_up" class="form_input" autofocus placeholder="Confirm password" required>
+            <div class="form_input-error-message"></div>
+          </div>
+          <button class="form_button" id="signUpButton" type="submit">Continue</button>
+          <p class="form_text">
+            <a class="form_link" href="./" id="linkLogin">Already have an account? Sign in</a>
+          </p>
+        </form>
+    </div>
+    
+</body>
+</html>
